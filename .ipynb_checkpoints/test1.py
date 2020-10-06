@@ -9,6 +9,6 @@ print('msg: ', msg)
 
 
 pd.set_option('display.max_columns', 100)
-df = pd.read_csv(r"C:\Users\Gavin Yu\Desktop\IMDB_Top250Engmovies2_OMDB_Detailed.csv")
+df = pd.read_csv(/IMDB.csv)
 df.head()
 
