@@ -9,6 +9,6 @@ print('msg: ', msg)
 
 
 pd.set_option('display.max_columns', 100)
-df = pd.read_csv(/IMDB.csv)
+df = pd.read_csv('IMDB.csv')
 df.head()
 
