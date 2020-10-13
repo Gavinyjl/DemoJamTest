@@ -11,6 +11,8 @@ fan = pd.read_csv('cal/alternator_fan.csv')
 fan1 = fan.loc[:, ['material ID', 'diameter',
                    'width', 'weight', 'price', 'rank']]
 print('fan1:\n', fan1)
+
+print('shape:', fan1.shape)
 # head = fan.head()
 # data1 = fan.iloc[0:3, 2]
 # print('data1:', data1)
