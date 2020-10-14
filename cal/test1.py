@@ -22,9 +22,19 @@ print('fan2.std0:', fan2.std(axis=0))
 
 
 fan2_scaled = ppc.scale(fan2)
-print('fan2_scaled:', fan2_scaled)
-print('fan2_scaled.mean:', fan2_scaled.mean(axis=0))
-print('fan2_scaled.std:', fan2_scaled.std(axis=0))
+print('fan2_scaled:\n', fan2_scaled)
+print('fan2_scaled.mean:\n', fan2_scaled.mean(axis=0))
+print('fan2_scaled.std:\n', fan2_scaled.std(axis=0))
+
+fan3 = ppc.normalize(fan2, norm='l2')
+print('fan3:\n', fan3)
+
+min_max_scaler = ppc.MinMaxScaler(feature_range=(0, 1))
+fan2_min_max = min_max_scaler.fit_transform(fan2)
+print('fan2_min_max.mean:\n', fan2_min_max.mean(axis=0))
+print('fan2_min_max.std:\n', fan2_min_max.std(axis=0))
+
+
 
 
 # df = pd.DataFrame(np.arange(0, 60, 2).reshape(10, 3), columns=list('abc'))
