@@ -38,15 +38,6 @@ print('fan2_min_max.mean:\n', fan2_min_max.mean(axis=0))
 print('fan2_min_max.std:\n', fan2_min_max.std(axis=0))
 
 
-
-
-
-
-
-
-
-
-
 # df = pd.DataFrame(np.arange(0, 60, 2).reshape(10, 3), columns=list('abc'))
 # print('df:\n', df)
 # print('df.mean0:\n', df.mean(axis=0))
