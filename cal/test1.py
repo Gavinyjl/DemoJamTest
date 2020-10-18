@@ -3,6 +3,7 @@ import pandas as pd
 import sklearn.metrics.pairwise as pw
 import sklearn.preprocessing as ppc
 import random
+import scipy as sp
 
 msg = 'start py'
 print('msg:', msg)
@@ -39,10 +40,14 @@ print('fan2_min_max:\n', fan2_min_max)  # 平均数
 print('fan2_min_max.mean:\n', fan2_min_max.mean(axis=0))  # 平均数
 print('fan2_min_max.std:\n', fan2_min_max.std(axis=0))  # 标准差
 
+# 用户选择item次数
 user_prefer = []
-for i in range(10000):
-    num = random.randint(0, 20)
-    user_prefer.append(num)
+# for i in range(10000):
+#     num = random.randint(0, 20)
+#     user_prefer.append(num)
+
+b = sp.sparse.rand(1, 10000, 0.005)
+print('随机矩阵：', b)
 
 
 print('user_prefer:', user_prefer)
