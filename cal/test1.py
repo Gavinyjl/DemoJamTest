@@ -76,7 +76,7 @@ row_seq = [i for i in range(0, col_num)]
 insert_arr = random.sample(row_seq, 100)
 print('\ninsert_arr', insert_arr)
 for i in range(len(insert_arr)):
-    user_prefer[insert_arr[i]] = random.randint(0, 5)
+    user_prefer[insert_arr[i]] = random.randint(0, 10)
 print('\nuser_prefer插值后', user_prefer)
 
 # print('arr的类型：（函数前）', type(user_prefer))
