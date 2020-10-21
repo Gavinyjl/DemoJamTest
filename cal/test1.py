@@ -68,6 +68,7 @@ def create_user_profile(fan2_min_max, itemNum, maxChooseTime):
     # user_profile由user_prefer和fan2_min_max矩阵相乘得到
     user_profile = user_prefer.dot(fan2_min_max)
     print('[', itemNum, ']', '[', maxChooseTime, ']: ', user_profile)
+    return user_profile
 
 
 def profile_test(fan2_min_max):
@@ -132,8 +133,10 @@ print('fan2_min_max.std:\n', fan2_min_max.std(axis=0))  # 标准差
 # up_array = up_array/up_array.sum()
 # print('up_array回归化:\n', up_array)
 
-user_prefer = []
-profile_test(fan2_min_max)
+""" 创建user_profile """
+user_profile = []
+user_profile = create_user_profile(fan2_min_max, 10, 20)
+# profile_test(fan2_min_max)
 
 # user_prefer = process_up(10, 10)
 # # user_profile由user_prefer和fan2_min_max矩阵相乘得到
