@@ -12,18 +12,17 @@ print('msg:', msg)
 # 设置numpy在控制台全部输出，inf是无穷大，precision保留3位小数
 np.set_printoptions(threshold=np.inf, precision=3)
 
-# 绘制fan2图像
-
 
 def fig_show(fan2):
+    """ 绘制fan2图像 """
     fig = plt.figure()
     index = [i for i in range(10000)]
     plt.plot(index, fan2, '.')
     plt.show()
 
 
-# 将一维矩阵归一化，使所有水元素的和为1
 def to_sum_one(arr):
+    """ 将一维矩阵归一化，使所有水元素的和为1 """
     arr = np.array(arr)
     # print('arr的类型：（函数内）', type(arr))
     arr = arr/arr.sum()
@@ -31,8 +30,8 @@ def to_sum_one(arr):
     return(arr)
 
 
-# 创建一个随机的user_prefer，控制item非零个数和最大选择次数
 def init_random_prefer(itemNum, maxChooseTime):
+    """ 创建一个随机的user_prefer，控制item非零个数和最大选择次数 """
     # user_prefer的行数与列数
     row_num = 1
     col_num = 10000
@@ -49,10 +48,9 @@ def init_random_prefer(itemNum, maxChooseTime):
     # print('\nuser_prefer插值后', user_prefer)
     return user_prefer
 
-# 生成并归一化user_prefer
-
 
 def process_up(itemNum, maxChooseTime):
+    """ 生成并归一化user_prefer """
     user_prefer = init_random_prefer(itemNum, maxChooseTime)
     # print('user_prefer插值结果\n', user_prefer)
 
