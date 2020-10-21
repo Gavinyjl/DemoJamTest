@@ -60,6 +60,16 @@ def process_up(itemNum, maxChooseTime):
     return user_prefer
 
 
+def create_user_profile(fan2_min_max, itemNum, maxChooseTime):
+    """
+    计算user_profile
+    """
+    user_prefer = process_up(itemNum, maxChooseTime)
+    # user_profile由user_prefer和fan2_min_max矩阵相乘得到
+    user_profile = user_prefer.dot(fan2_min_max)
+    print('[', itemNum, ']', '[', maxChooseTime, ']: ', user_profile)
+
+
 def profile_test(fan2_min_max):
     """
     item和次数在[10,100]间遍历计算user_profile
