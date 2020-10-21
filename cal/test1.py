@@ -12,6 +12,13 @@ print('msg:', msg)
 # 设置numpy在控制台全部输出，inf是无穷大，precision保留3位小数
 np.set_printoptions(threshold=np.inf, precision=3)
 
+# 绘制fan2图像
+def fig_show(fan2):
+    fig = plt.figure()
+    index = [i for i in range(10000)]
+    plt.plot(index, fan2, '.')
+    plt.show()
+
 
 # 将一维矩阵归一化，使所有水元素的和为1
 def to_sum_one(arr):
@@ -71,12 +78,10 @@ print('fan2:\n', fan2)
 print('fan2.mean0:', fan2.mean(axis=0))
 print('fan2.std0:', fan2.std(axis=0))
 
-# 绘制fan2图像
-fig = plt.figure()
-index = [i for i in range(10000)]
-plt.plot(index, fan2['price'], '.')
-plt.show()
+print('输出diameter维度:\n', fan2['diameter'])
 
+
+fig_show(fan2['price'])
 
 # 标准化Z-Score，使均值在0附近，去除方差
 # fan2_scaled = ppc.scale(fan2)
@@ -107,12 +112,12 @@ print('fan2_min_max.std:\n', fan2_min_max.std(axis=0))  # 标准差
 # print('up_array回归化:\n', up_array)
 
 user_prefer = []
-for i in range(10, 105, 5):
-    for j in range(10, 105, 5):
-        user_prefer = process_up(i, j)
-        # user_profile由user_prefer和fan2_min_max矩阵相乘得到
-        user_profile = user_prefer.dot(fan2_min_max)
-        print('[', i, ']', '[', j, ']: ', user_profile)
+# for i in range(10, 105, 5):
+#     for j in range(10, 105, 5):
+#         user_prefer = process_up(i, j)
+#         # user_profile由user_prefer和fan2_min_max矩阵相乘得到
+#         user_profile = user_prefer.dot(fan2_min_max)
+#         print('[', i, ']', '[', j, ']: ', user_profile)
 
 
 # user_prefer = process_up(10, 10)
