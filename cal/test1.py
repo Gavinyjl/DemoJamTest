@@ -121,7 +121,7 @@ for i in range(10, 105, 5):
 # print('user_profile:\n', user_profile)
 
 
-# df例子
+# df示例
 # df = pd.DataFrame(np.arange(0, 60, 2).reshape(10, 3), columns=list('abc'))
 # print('df:\n', df)
 # print('df.mean0:\n', df.mean(axis=0))
