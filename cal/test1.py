@@ -13,6 +13,8 @@ print('msg:', msg)
 np.set_printoptions(threshold=np.inf, precision=3)
 
 # 绘制fan2图像
+
+
 def fig_show(fan2):
     fig = plt.figure()
     index = [i for i in range(10000)]
@@ -45,14 +47,12 @@ def init_random_prefer(itemNum, maxChooseTime):
     for i in range(len(insert_arr)):
         user_prefer[insert_arr[i]] = random.randint(0, maxChooseTime)
     # print('\nuser_prefer插值后', user_prefer)
-
     return user_prefer
 
 # 生成并归一化user_prefer
 
 
 def process_up(itemNum, maxChooseTime):
-
     user_prefer = init_random_prefer(itemNum, maxChooseTime)
     # print('user_prefer插值结果\n', user_prefer)
 
@@ -60,6 +60,19 @@ def process_up(itemNum, maxChooseTime):
     user_prefer = to_sum_one(user_prefer)
     # print('arr的类型：（函数后）', type(user_prefer))
     return user_prefer
+
+
+def profile_test(fan2_min_max):
+    """
+    item和次数在[10,100]间遍历计算user_profile
+    """
+    user_prefer = []
+    for i in range(10, 105, 5):
+        for j in range(10, 105, 5):
+            user_prefer = process_up(i, j)
+            # user_profile由user_prefer和fan2_min_max矩阵相乘得到
+            user_profile = user_prefer.dot(fan2_min_max)
+            print('[', i, ']', '[', j, ']: ', user_profile)
 
 
 pd.set_option('display.max_columns', 100)
@@ -112,13 +125,7 @@ print('fan2_min_max.std:\n', fan2_min_max.std(axis=0))  # 标准差
 # print('up_array回归化:\n', up_array)
 
 user_prefer = []
-# for i in range(10, 105, 5):
-#     for j in range(10, 105, 5):
-#         user_prefer = process_up(i, j)
-#         # user_profile由user_prefer和fan2_min_max矩阵相乘得到
-#         user_profile = user_prefer.dot(fan2_min_max)
-#         print('[', i, ']', '[', j, ']: ', user_profile)
-
+profile_test(fan2_min_max)
 
 # user_prefer = process_up(10, 10)
 # # user_profile由user_prefer和fan2_min_max矩阵相乘得到
