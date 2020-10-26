@@ -13,6 +13,27 @@ print('msg:', msg)
 np.set_printoptions(threshold=np.inf, precision=3)
 
 
+def print_fan2(fan2):
+    """
+    输出fan2参数
+    """
+    print('fan2:\n', fan2)
+    print('fan2.mean0:', fan2.mean(axis=0))
+    print('fan2.std0:', fan2.std(axis=0))
+    print('输出diameter维度:\n', fan2['diameter'])
+
+    fig_show(fan2['price'])
+
+
+def print_fan2_min_max(fan2_min_max):
+    """
+    输出fan2归一化后的参数
+    """
+    print('fan2_min_max:\n', fan2_min_max)  # 平均数
+    print('fan2_min_max.mean:\n', fan2_min_max.mean(axis=0))  # 平均数
+    print('fan2_min_max.std:\n', fan2_min_max.std(axis=0))  # 标准差
+
+
 def fig_show(fan2):
     """ 绘制fan2图像 """
     fig = plt.figure()
@@ -96,14 +117,8 @@ print('fan1.shape:', fan1.shape)
 # def df_to_matrix(df):
 #     arr=df.
 fan2 = fan1.iloc[:, 1:6]
-print('fan2:\n', fan2)
-print('fan2.mean0:', fan2.mean(axis=0))
-print('fan2.std0:', fan2.std(axis=0))
+print_fan2(fan2)
 
-print('输出diameter维度:\n', fan2['diameter'])
-
-
-fig_show(fan2['price'])
 
 # 标准化Z-Score，使均值在0附近，去除方差
 # fan2_scaled = ppc.scale(fan2)
@@ -118,10 +133,8 @@ fig_show(fan2['price'])
 # MinMaxScaler将fan2归一化，使特征分布在0-1之间
 min_max_scaler = ppc.MinMaxScaler(feature_range=(0, 1))
 fan2_min_max = min_max_scaler.fit_transform(fan2)
-print('fan2_min_max:\n', fan2_min_max)  # 平均数
-print('fan2_min_max.mean:\n', fan2_min_max.mean(axis=0))  # 平均数
-print('fan2_min_max.std:\n', fan2_min_max.std(axis=0))  # 标准差
 
+print_fan2_min_max(fan2_min_max)
 
 # b = sp.sparse.rand(1, 10000, 0.005)
 # print('随机矩阵：', b)
@@ -137,6 +150,7 @@ print('fan2_min_max.std:\n', fan2_min_max.std(axis=0))  # 标准差
 user_profile = []
 user_profile = create_user_profile(fan2_min_max, 10, 20)
 # profile_test(fan2_min_max)
+
 
 # user_prefer = process_up(10, 10)
 # # user_profile由user_prefer和fan2_min_max矩阵相乘得到
