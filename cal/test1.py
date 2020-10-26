@@ -114,8 +114,6 @@ print('fan1:\n', fan1)
 print('fan1.shape:', fan1.shape)
 
 # fan2是将fan1的dataframe转化为二维矩阵
-# def df_to_matrix(df):
-#     arr=df.
 fan2 = fan1.iloc[:, 1:6]
 print_fan2(fan2)
 
@@ -130,11 +128,12 @@ print_fan2(fan2)
 # fan3 = ppc.normalize(fan2, norm='l2')
 # print('fan3:\n', fan3)
 
-# MinMaxScaler将fan2归一化，使特征分布在0-1之间
+""" MinMaxScaler将fan2归一化，使特征分布在0-1之间 """
 min_max_scaler = ppc.MinMaxScaler(feature_range=(0, 1))
 fan2_min_max = min_max_scaler.fit_transform(fan2)
 
 print_fan2_min_max(fan2_min_max)
+
 
 # b = sp.sparse.rand(1, 10000, 0.005)
 # print('随机矩阵：', b)
