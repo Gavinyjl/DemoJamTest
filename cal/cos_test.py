@@ -44,3 +44,25 @@ y = [2, 2, 2, 4]
 cosSim(x, y)
 
 eucDist(x, y)
+
+
+A = np.mat(np.arange(1, 5).reshape(2, 2))
+B = np.mat(np.arange(0, 4).reshape(2, 2))
+
+print('A:\n', A)
+print('B:\n', B)
+
+
+def dotShow(A, B):
+    """
+    几种乘积
+    """
+    print('\n1 matrix:\n', A)
+    print('\n2 matrix:\n', B)
+    print('\nA.dot(B)\n', A.dot(B))
+    print('\nnp.dot(A,B)\n', np.dot(A, B))
+    print('\nA*B\n', A*B)
+    print('\nnp.multiply(A, B)\n', np.multiply(A, B))
+
+
+dotShow(np.mat(x), np.mat(y).T)
