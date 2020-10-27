@@ -3,7 +3,6 @@ import pandas as pd
 import sklearn.metrics.pairwise as pw
 import sklearn.preprocessing as ppc
 import random
-import scipy as sp
 from matplotlib import pyplot as plt
 
 msg = 'start py'
