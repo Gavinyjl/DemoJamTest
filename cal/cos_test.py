@@ -39,20 +39,6 @@ def eucDist(x, y):
     return dist
 
 
-x = [1, 1, 1, 1]
-y = [2, 2, 2, 4]
-cosSim(x, y)
-
-eucDist(x, y)
-
-
-A = np.mat(np.arange(1, 5).reshape(2, 2))
-B = np.mat(np.arange(0, 4).reshape(2, 2))
-
-print('A:\n', A)
-print('B:\n', B)
-
-
 def dotShow(A, B):
     """
     矩阵乘积
@@ -65,4 +51,16 @@ def dotShow(A, B):
     print('\nnp.multiply(A, B)\n', np.multiply(A, B))
 
 
+x = [1, 1, 1, 1]
+y = [2, 2, 2, 4]
+
+cosSim(x, y)
+eucDist(x, y)
 dotShow(np.mat(x), np.mat(y).T)
+
+
+A = np.mat(np.arange(1, 5).reshape(2, 2))
+B = np.mat(np.arange(0, 4).reshape(2, 2))
+
+print('A:\n', A)
+print('B:\n', B)
