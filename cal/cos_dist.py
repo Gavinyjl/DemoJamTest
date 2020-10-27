@@ -1,5 +1,6 @@
 import math
 import numpy as np
+from scipy.spatial.distance import cdist
 
 
 def dotProduct(v1, v2):
@@ -49,6 +50,15 @@ def dotShow(A, B):
     print('\nnp.dot(A,B)\n', np.dot(A, B))
     print('\nA*B\n', A*B)
     print('\nnp.multiply(A, B)\n', np.multiply(A, B))
+
+
+def cosDist(x, y):
+    """
+    余弦距离
+    """
+    cos_dist = cdist(x, y, metric='euclidean')
+    print('余弦距离：', cos_dist)
+    return cos_dist
 
 
 x = [1, 1, 1, 1]
