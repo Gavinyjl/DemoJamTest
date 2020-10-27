@@ -55,7 +55,7 @@ print('B:\n', B)
 
 def dotShow(A, B):
     """
-    几种乘积
+    矩阵乘积
     """
     print('\n1 matrix:\n', A)
     print('\n2 matrix:\n', B)
