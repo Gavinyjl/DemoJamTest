@@ -5,11 +5,13 @@ import sklearn.preprocessing as ppc
 import random
 from matplotlib import pyplot as plt
 
+
 msg = 'start py'
 print('msg:', msg)
 
 # 设置numpy在控制台全部输出，inf是无穷大，precision保留3位小数
 np.set_printoptions(threshold=np.inf, precision=3)
+
 
 
 class CBRecommendation():
@@ -97,6 +99,8 @@ class CBRecommendation():
                 print('[', i, ']', '[', j, ']: ', user_profile)
 
 
+
+
 cbr = CBRecommendation()
 pd.set_option('display.max_columns', 100)
 fan = pd.read_csv('cal/alternator_fan.csv')
@@ -154,3 +158,6 @@ user_profile = cbr.create_user_profile(fan2_min_max, 10, 20)
 # print('df.mean1:\n', df.mean(axis=1))
 # df1 = df.iloc[5:8, [1, 2]]
 # print('df1', df1)
+
+
+
