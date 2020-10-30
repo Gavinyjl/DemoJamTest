@@ -148,7 +148,7 @@ user_profile = cbr.create_user_profile(fan2_min_max, 10, 20)
 # user_profile = user_prefer.dot(fan2_min_max)
 # print('user_profile:\n', user_profile)
 
-# df示例
+# df
 # df = pd.DataFrame(np.arange(0, 60, 2).reshape(10, 3), columns=list('abc'))
 # print('df:\n', df)
 # print('df.mean0:\n', df.mean(axis=0))
