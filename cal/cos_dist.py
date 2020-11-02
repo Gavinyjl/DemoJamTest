@@ -61,16 +61,16 @@ def cosDist(x, y):
     return cos_dist
 
 
-x = [1, 1, 1, 1]
-y = [2, 2, 2, 4]
+# x = [1, 1, 1, 1]
+# y = [2, 2, 2, 4]
 
-cosSim(x, y)
-eucDist(x, y)
-dotShow(np.mat(x), np.mat(y).T)
+# cosSim(x, y)
+# eucDist(x, y)
+# dotShow(np.mat(x), np.mat(y).T)
 
 
-A = np.mat(np.arange(1, 5).reshape(2, 2))
-B = np.mat(np.arange(0, 4).reshape(2, 2))
+# A = np.mat(np.arange(1, 5).reshape(2, 2))
+# B = np.mat(np.arange(0, 4).reshape(2, 2))
 
-print('A:\n', A)
-print('B:\n', B)
+# print('A:\n', A)
+# print('B:\n', B)
